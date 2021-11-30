@@ -6,10 +6,6 @@ function App() {
   const [tourData, setTourData] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // delete a tour
-  const deleteTour = async (id) => {
-    setTourData(tourData.filter((tour) => tour.id !== id));
-  };
 
   useEffect(() => {
     const getTours = async () => {
@@ -41,7 +37,7 @@ function App() {
           </h1>
 
           {tourData.length > 0 ? (
-            <Tours tours={tourData} onDelete={deleteTour} />
+            <Tours tours={tourData} />
           ) : (
            null
           )}

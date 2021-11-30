@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function TourCard({ tour, onDelete }) {
+function TourCard({ tour }) {
 
     const [val, setVal] = useState(null);
     
@@ -33,7 +33,6 @@ function TourCard({ tour, onDelete }) {
           </span>
         </p>
         <button
-          onClick={() => onDelete(tour.id)}
           className="border-red-500 text-red-500 border w-60 self-center m-5 rounded-md shadow p-1"
         >
           NOT INTERESTED
