@@ -15,7 +15,6 @@ function App() {
                 const data = await (await fetch('https://course-api.com/react-tours-project')).json()
                 setTourData(data)
                 setLoading(false)
-                console.log(data)
             } catch (error) {
                 return error
             }
@@ -23,6 +22,13 @@ function App() {
         getTours()
     }, [])
 
+
+    const handleRemove = (id) => {
+        let newTours = tourData.slice(); //copy the array
+        newTours.splice(id, 1); //remove the element
+        setTourData(newTours); //update the state
+        //setTourData(tourData.filter(tour => tour.id !== id)) // this is the same as the line above
+    }
     return (
         <main className="flex items-center w-full min-h-screen flex-col my-10 md:my-24 text-gray-700">
 
@@ -30,7 +36,7 @@ function App() {
                 Our Tours 
             </h1>
 
-            {tourData ? <Tours tours={tourData} /> : null}
+            {tourData ? <Tours tours={tourData} handleRemove={handleRemove}/> : null}
         </main>
     );
 }
