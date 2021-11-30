@@ -1,30 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import TourCard from '../Components/TourCard'
 
-function Tours() {
-    const [tourData, setTourData] = useState([])
-    const [loading, setLoading] = useState(false)
-
-    useEffect(() => {
-        const getTours = async() => {
-            try {
-                setLoading(true)
-                const data = await (await fetch('https://course-api.com/react-tours-project')).json()
-                // console.log(data)
-                setTourData(data)
-                setLoading(false)
-            } catch (error) {
-                return error
-            }
-        }
-        getTours()
-    }, [])
+function Tours({tours}) {
 
     return (
-        <div>
-            {tourData.map((tour) => {
+        <div className="flex flex-col items-center gap-8 md:gap-12">
+            {(tours.length > 0) ? tours.map((tour) => (
                 <TourCard key={tour.id} tour={tour}/>
-            })}
+            )) 
+            : null
+            }
         </div>
     )
 }
