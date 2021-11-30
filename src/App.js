@@ -1,4 +1,5 @@
 import TourCard from "./Components/TourCard";
+import Tours from "./Components/Tours";
 
 function App() {
     return (
@@ -8,8 +9,7 @@ function App() {
                 Our Tours 
             </h1>
 
-            <TourCard />
-
+            <Tours />
         </main>
     );
 }
