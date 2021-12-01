@@ -66,6 +66,9 @@ The Public Folder contains The Index.html and Style.css Which is use to style th
 
 - The project is hosted on Netlify
 
+> http://team-siberia-tours.netlify.app
+
+
 ## Acknowledgments
 
 We are grateful to Sidehustle Internship Team for the opportunity, we are also grateful to our mentor Omisakin Olatunji for providing project like this to work on!
