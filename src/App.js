@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 
 import Tours from "./Components/Tours";
 
@@ -37,8 +37,11 @@ function App() {
             </h1>
 
             {tourData ? <Tours tours={tourData} handleRemove={handleRemove}/> : null}
+    
         </main>
-    );
+      )}
+    </>
+  );
 }
 
 export default App;

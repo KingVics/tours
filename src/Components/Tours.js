@@ -12,6 +12,7 @@ function Tours({tours, handleRemove}) {
             }
         </div>
     )
+
 }
 
 export default Tours
