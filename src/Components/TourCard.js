@@ -21,7 +21,7 @@ function TourCard({ tour, id, handleRemove }) {
           <h2 className="text-2xl font-bold">{tour.name}</h2>
 
                     <button className="text-green-900 bg-green-100 rounded-md py-1 px-2"> 
-                        {tour.price} 
+                        {"$ " + tour.price} 
                     </button>
                 </div>
                  <p>
