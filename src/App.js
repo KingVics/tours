@@ -15,7 +15,6 @@ function App() {
                 const data = await (await fetch('https://course-api.com/react-tours-project')).json()
                 setTourData(data)
                 setLoading(false)
-                console.log(data)
             } catch (error) {
                 return error
             }
@@ -27,7 +26,7 @@ function App() {
         // let newTours = tourData.slice(); //copy the array
         let newTours = [...tourData] //spread operator
         newTours = newTours.filter(tour => tour.id !== id); //filter out the item
-        // setTourData(tourData.filter(tour => tour.id !== id)) // this is the same as the line above
+        // setTourData(tourData.filter(tour => tour.id !== id)) // this is the 
         setTourData(newTours)
     }
 
