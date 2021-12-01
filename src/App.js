@@ -23,6 +23,14 @@ function App() {
         getTours()
     }, [])
 
+    const handleRemove = (id) => {
+        // let newTours = tourData.slice(); //copy the array
+        let newTours = [...tourData] //spread operator
+        newTours = newTours.filter(tour => tour.id !== id); //filter out the item
+        // setTourData(tourData.filter(tour => tour.id !== id)) // this is the same as the line above
+        setTourData(newTours)
+    }
+
     return (
         <main className="flex items-center w-full min-h-screen flex-col my-10 md:my-24 text-gray-700">
 
@@ -30,7 +38,7 @@ function App() {
                 Our Tours 
             </h1>
 
-            {tourData ? <Tours tours={tourData} /> : null}
+            {tourData ? <Tours tours={tourData} handleRemove={handleRemove} /> : null}
         </main>
     );
 }

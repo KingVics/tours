@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from 'react'
 
-function TourCard({ tour }) {
-
+function TourCard({ tour, id, handleRemove }) {
+    console.log(id)
     return (
         <section className="w-10/12 md:w-4/6 border-2 min-h-0 flex flex-col rounded-md overflow-hidden shadow-md">
             <img 
@@ -23,7 +23,7 @@ function TourCard({ tour }) {
                 <p>
                     {tour.info}
                 </p>
-                <button className="border-red-500 text-red-500 border w-60 self-center m-5 rounded-md shadow p-1">
+                <button className="border-red-500 text-red-500 border w-60 self-center m-5 rounded-md shadow p-1" onClick={() => handleRemove(id)}>
                     NOT INTERESTED
                 </button>
             </div>
