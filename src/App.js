@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 
 import Tours from "./Components/Tours";
 
@@ -6,7 +6,6 @@ function App() {
 
     const [tourData, setTourData] = useState([])
     const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(false)
 
     useEffect(() => {
         const getTours = async() => {
@@ -30,16 +29,26 @@ function App() {
         setTourData(newTours)
     }
 
-    return (
-        <main className="flex items-center w-full min-h-screen flex-col my-10 md:my-24 text-gray-700">
+
+    if(loading){
+        return <p className="text-4xl font-black text-center h-96 mt-96"> Loading... </p>
+    }
+
+    return tourData && (
+        <main className="flex items-center w-full min-h-screen flex-col my-5 md:my-24 text-gray-700">
 
             <h1 className="font-black text-4xl border-b-4 border-blue-400 mb-10"> 
                 Our Tours 
             </h1>
-
-            {tourData ? <Tours tours={tourData} handleRemove={handleRemove} /> : null}
+      
+            {
+                tourData.length > 0 ? 
+                <Tours tours={tourData} handleRemove={handleRemove} /> : 
+                <p className="text-2xl font-black text-center h-96 my-auto"> No more tours... </p>
+            }
         </main>
-    );
+    )
+  
 }
 
 export default App;
